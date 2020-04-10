@@ -234,6 +234,7 @@ class CircularProgressBar(context: Context, attrs: AttributeSet? = null) : View(
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         progressAnimator?.cancel()
+        progressAnimator?.removeAllUpdateListeners()
         indeterminateModeHandler?.removeCallbacks(indeterminateModeRunnable)
     }
 
